@@ -28,7 +28,7 @@ class Login extends StatelessWidget {
             children: [
               const Center(
                 child: Text(
-                  "Insira sua senha",
+                  "Cadastra",
                   style: TextStyle(fontSize: 35, color: Colors.white),
                 ),
               ),

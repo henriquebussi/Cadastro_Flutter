@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:stream/pages/login.dart';
+
 
 class Cadastro extends StatelessWidget {
   const Cadastro({super.key});
@@ -90,10 +92,10 @@ class Cadastro extends StatelessWidget {
                   onPressed: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Cadastro()),
+                      MaterialPageRoute(builder: (context) => Login()),
                   );
                 }, 
-                      child: Text("Entrar"),
+                child: Text("Entrar"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 180, 212, 0),
                   fixedSize: Size(200, 50),
