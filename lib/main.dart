@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stream/pages/cadastro.dart';
 import 'package:stream/pages/login.dart';
+import 'package:stream/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(colorScheme: 
-      ColorScheme.fromSeed(seedColor:
-       Color.fromARGB(0, 0, 0, 0)),
-        useMaterial3: true),
-      title: 'Flutter Demo',
-      home: Login(),
+      initialRoute: "/",
+      routes: {
+        '/' : (context) => const Login(),
+        '/cadastro' : (context) => const Cadastro(),
+        '/home' : (context) => const Home()
+      }
     );
   }
 }
