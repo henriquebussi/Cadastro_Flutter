@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:stream/pages/login.dart';
@@ -57,7 +57,8 @@ class _CadastroState extends State<Cadastro> {
                     validator: (String? name){
                       if(name == "" || name == null){
                         return "O nome não pode ser vazio";
-                      } }
+                      }
+                      return null; }
                   ),
                   TextFormField(
                     autofocus: true,
@@ -180,7 +181,7 @@ class _CadastroState extends State<Cadastro> {
 
                   GestureDetector(
                     child: const Text(
-                      "Cadastrar-se",
+                      "Login",
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12 ),
                     ),
                     onTap: () => {
@@ -198,6 +199,7 @@ class _CadastroState extends State<Cadastro> {
                         buttonEnterClick();
 
                     }, 
+                    // ignore: sort_child_properties_last
                     child: Text("Entrar"),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 180, 212, 0),

@@ -1,5 +1,7 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
-import 'cadastro.dart'; // Certifique-se de importar a nova página
+import '../shared/style.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -16,20 +18,20 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 24, 36, 46),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
-      ),
       body: Center(
         child: Container(
+          height: MediaQuery.of(context).size.height * 1,
+          width: MediaQuery.of(context).size.width * 1,
           padding: const EdgeInsets.all(18),
           margin: const EdgeInsets.all(18),
           decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [MyColors.roxo, MyColors.azulEscuro]),
             color: const Color.fromARGB(255, 37, 37, 37),
             borderRadius: BorderRadius.circular(8),
           ),
-          height: 500,
-          width: 500,
           child: Form(
             key: _formKey,
             child: SingleChildScrollView(
@@ -38,7 +40,7 @@ class _LoginState extends State<Login> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Center(
-                    child: Text(
+                    child: Text( 
                       "Login",
                       style: TextStyle(fontSize: 35, color: Colors.white),
                       
@@ -57,7 +59,7 @@ class _LoginState extends State<Login> {
                       hintStyle: TextStyle(color: Colors.white),
                       iconColor: Color.fromARGB(255, 180, 212, 0),
                     ),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     validator: (String? email){
                       if(email == "" || email == null){
                         return "O email não pode ser vazio";
@@ -88,10 +90,10 @@ class _LoginState extends State<Login> {
                       }
                       ),
                       hintText: "Informe a senha",
-                      hintStyle: TextStyle(color: Colors.white),
-                      iconColor: Color.fromARGB(255, 180, 212, 0),             
+                      hintStyle: const TextStyle(color: Colors.white),
+                      iconColor: const Color.fromARGB(255, 180, 212, 0),             
                     ),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     validator: (String? senha){
                       if(senha == "" || senha == null){
                         return "O senha não pode ser vazio";
@@ -108,10 +110,11 @@ class _LoginState extends State<Login> {
                       onPressed: () {
                         buttonEnterClick();
                       },
-                      child: Text("Entrar"),
+                      // ignore: sort_child_properties_last
+                      child: const Text("Entrar"),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 180, 212, 0),
-                        fixedSize: Size(200, 50),
+                        backgroundColor: const Color.fromARGB(255, 180, 212, 0),
+                        fixedSize: const Size(200, 50),
                         foregroundColor: const Color.fromARGB(255, 167, 0, 0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -125,7 +128,7 @@ class _LoginState extends State<Login> {
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                     onTap: () => {
-                        Navigator.pushNamed(context, '/cadastro'),
+                        Navigator.pushReplacementNamed(context, '/cadastro'),
 
                     },
                   ),
