@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stream/shared/style.dart';
 import 'dart:async';
-import 'login.dart'; // Importando o arquivo login.dart
+import 'login.dart'; 
 
 class SplashS extends StatefulWidget {
   const SplashS({super.key});
@@ -14,7 +14,6 @@ class _SplashSState extends State<SplashS> {
   @override
   void initState() {
     super.initState();
-    // Timer para navegar para a tela de login após 3 segundos
     Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const Login()),
